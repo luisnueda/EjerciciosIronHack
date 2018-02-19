@@ -13,6 +13,7 @@ body{
   font-weight: 300;
  }
 
+<<<<<<< HEAD
 header{
   background-image: url("https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/ironhack-skydive-background.jpg"); 
   height: 650px;
@@ -78,30 +79,52 @@ h1,h2,h3,h4,h5{
  }
 
 h1{
+=======
+ h1,h2,h3,h4,h5{
+   font-family: Roboto Condensed;
+ }
+
+ h1{
+>>>>>>> 1071880b60fc90f986c8c1563de84badbdfe6b0a
    font-size: 9em;
    text-align: center;
    text-transform: uppercase;
  }
 
+<<<<<<< HEAD
 h2{
+=======
+ h2{
+>>>>>>> 1071880b60fc90f986c8c1563de84badbdfe6b0a
    font-size: 5em;
    text-align: center;
    text-transform: uppercase;
    line-height: 4em;
+<<<<<<< HEAD
    color: white;
    text-shadow: #020819 8px -20px 9px;
  }
 
 h3{
+=======
+ }
+
+ h3{
+>>>>>>> 1071880b60fc90f986c8c1563de84badbdfe6b0a
    font-size: 4.2em;
    text-align: center;
  }
 
+<<<<<<< HEAD
 h4{
+=======
+ h4{
+>>>>>>> 1071880b60fc90f986c8c1563de84badbdfe6b0a
    font-size: 1.5em;
    letter-spacing: 0.4px;
  }
 
+<<<<<<< HEAD
 h5{
    font-size: 1.2em;
  }
@@ -116,3 +139,8 @@ h5{
   text-decoration: none;
   font-size: 2em;
  }
+=======
+ h5{
+   font-size: 1.2em;
+ }
+>>>>>>> 1071880b60fc90f986c8c1563de84badbdfe6b0a
