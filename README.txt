@@ -2,9 +2,4 @@ Luis Nueda.
 Ejercicios del Prework IronHack.
 15/02/2018
 
-Se creará una Rama para cada Bloque:
-  -HTML 
-    .Ejercicio IRONSKYDIVE
-  
-  -NPMwebsite
-    .Ejercicio entregable landing page Npm
+En esta rama se encuentra el ejercicio de la landing page de NPM
