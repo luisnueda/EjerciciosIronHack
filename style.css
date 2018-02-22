@@ -219,3 +219,27 @@ td,th{
   padding: 5px 10px 5px 10px;
   text-align: center;
 }
+.slot-form-container{
+ width: 40%;
+ margin: 18px auto 0 auto;
+ font-size: 1.5em;
+ text-align: center;
+}
+label{
+  display: block;
+  margin-bottom: 5px;
+  line-height: 15px;
+}
+.slot-form-container input, .slot-form-container select{
+  height: 20px;
+  outline: none;
+  padding: 3px;
+  width: 100%;
+}
+.slot-form-container button{
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+  padding: 9px;
+  margin-top: 15px;
+}
