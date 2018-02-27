@@ -38,66 +38,69 @@ nav a {
 header{
     background-image: url(./images/city-scape.svg);
     background-repeat: no-repeat;
-
+    width: 100%;
     height: 439px;
-    color:white;
-    
+    color:white;  
 }
 .primerDiv{
-    padding: 20px;
-    display: flex;                  /* establish flex container */
-    flex-direction: row;            /* default value; can be omitted */
-    flex-wrap: nowrap;              /* default value; can be omitted */
-    
+    width: 100%;
+    display: flex;
+    padding-top: 2%;
+    padding-bottom: 2%;          
 }
-
 .logo{
-    width: 20%;
-    margin-right: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+.barra-busqueda{
+    margin-left: 0%;
+    width: 66%;
+    display: flex;
+    align-items: center;
+}
+.barra-lupa{
+    margin-left: 0%;
+    margin-right: 2%;
+    width: 4%;
+    display: flex;
+    align-items: center;
 }
 .logeo{
-    width: 120px;
-    margin-right: -10px;
-    margin-left: 20px;
-    align-items: center;
     float: right;
+    display: flex;
+    align-items: center;
 }
-.osito{
-    width: 37px;
-    padding-left: 0px;
-}
-#logeoLetras{
-    margin-top: 20px;
-
-}
-#logeoLetras a{
+.logeo a{
     text-decoration: none;
     color: white;
     font-size: 16px;
 }
-#logeoImagen{
-    margin-top: 10px;
+.logeoImagen{
+    margin-right: 2%;
+    float: right;
+    display: flex;
+    align-items: center;
 }
-#busqueda{
+.barra-busqueda input{
     height: 50px;
-    width: 830px;
-    margin-left: -100px;
+    width: 100%;
     font-size: 16px;
     background-color: rgb(31, 82, 111);
     border: 1px solid #4C738A;
 }
-#lupa{
-    width: 47px;
+.barra-lupa input{
     height: 50px;
-    margin-left: -4px;
+    width: 100%;
     font-size: 16px;
     background-color: rgb(31, 82, 111);
     border: 1px solid #4C738A;
 }
 .segundoDiv{
-    width: 37%;
-    margin: 25px 30%;
-    
+    width: 38%;
+    margin: 25px 14%;
 }
 .segundoDiv button{
     background-color: rgb(240, 146, 51);
@@ -105,8 +108,98 @@ header{
     outline: none;
     border: 1px solid transparent;
     color: white;
-    height: 32px;
+    height: 40px;
     font-size: 18px;
     width: 33%;
     margin-top: 20px;
+}
+.segundoDiv h1{
+    padding-bottom: 2%;
+}
+/* -----Section 1----- */
+.contenedorSection1{
+    width: 100%;
+    height: 585px;
+    background-color: rgb(39, 53, 71);
+    color: white;
+}
+.section1{
+    padding-top: 10%;
+    padding-left: 14%; 
+    display: flex;
+    align-items: center;         
+}
+.collaboration-img{
+    width: 70%;
+    margin-right: 2%;
+}
+.collaboration-text{
+    float: right;
+
+}
+.collaboration-text h1{
+    padding-bottom: 2%;
+    width: 70%;
+    font-size: 36px;
+    font-family: sans-serif;
+    font-weight: 300;
+}
+.collaboration-text ul{
+    padding-left: 4%;
+}
+.collaboration-text li{
+    margin-bottom: 2%;
+}
+.collaboration-text button{
+    background-color: rgb(203, 56, 55);
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid transparent;
+    color: white;
+    height: 40px;
+    font-size: 18px;
+    width: 33%;
+    margin-top: 20px;
+    margin-bottom: 2%;
+}
+.collaboration-text a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+/* -----Section 2----- */
+.contenedorSection2{
+    width: 100%;
+    height: 510px;
+    background-image: url(./images/forklift.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.section2{
+    padding-top: 10%;
+    padding-left: 14%;
+    color: white; 
+}
+.section2 h1{
+    padding-bottom: 2%;
+    font-size: 36px;
+    font-family: sans-serif;
+    font-weight: 300;
+}
+.section2 p{
+    width: 31%;
+    padding-bottom: 2%;
+}
+.section2 button{
+    background-color: rgb(49, 68, 88);
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid transparent;
+    color: white;
+    height: 40px;
+    font-size: 18px;
+    width: 13%;
+    margin-top: 20px;
+    margin-bottom: 2%;
 }
