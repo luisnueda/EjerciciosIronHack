@@ -23,21 +23,33 @@
   </nav>
   <header>
     <div class="primerDiv">
-      <img src="./images/npm-logo.png" alt="npm-logo">
+      <div class="logo">
+        <img src="./images/npm-logo.png" alt="npm-logo" height="50px">
+      </div>
       <div class="barras">
         <input type="text" id="busqueda" placeholder="find packages">
-        <input type="lupa" placeholder="lupa" >
-        <a href="#Sign in or log in">Sign in or log in<img src="./images/bear-logo.png" alt="bear-logo"></a>
-      </div>  
+        <input type="lupa" placeholder="lupa" id="lupa">        
+      </div>
+      <div class="logeo">
+        <div id="logeoLetras">
+        <a href="#Sign in or log in">Sign in or log in</a>
+        </div>
+      </div>
+      <div id="logeoImagen">
+          <div class="prueba">
+            <img src="./images/bear-logo.png" alt="bear-logo" height="40px">
+          </div>
+      </div>
     </div>
     <div class="segundoDiv">
       <h1>Build amazing things</h1>
       <p>npm is the package manager for JavaScript and the world’s largest software registry. Discover packages of reusable code — and assemble them in powerful new ways.</p>
-      <a href="#sing up npm">Sing up for npm</a>
-      <img src="./images/collaboration.svg" alt="collaboration">
+      <button type="button">Sing up for npm</button>
     </div>
+    <div class="clearfix"></div>
   </header>
-  <section id="section1">
+  <!-- <section id="section1">
+    <img src="./images/collaboration.svg" alt="collaboration">
     <h1>npm Orgs is powerful collaboration - for features</h1>
     <ul>
       <li>Encourage code discovery and re-use within teams</li>
@@ -71,6 +83,6 @@
       <h3>Build</h3>
       <p>Assemble package like building blocks to quickly develop awesome new projects.</p>
     </article>
-  </section>
+  </section> -->
 </body>
 </html>
