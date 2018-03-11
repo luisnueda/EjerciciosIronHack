@@ -5,7 +5,29 @@ var rover = {
   travelLog: []
 };
 // ======================
+var board = [
+  [null, "O", null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null],
+  [null, null, "O", null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null]
+];
 
+for(var i = 0; i < board.length; i++){
+  var row = board[i];
+  for(var j = 0; j < row.length; j++){
+    var column = row[j];
+    if(column === "O"){
+      var obstaculo = [i,j];
+      console.log("***** " + obstaculo);
+    }
+  }
+}
 // ======================
 function turnLeft(rover) {
   console.log("turnLeft was called!");
@@ -50,66 +72,123 @@ function turnRight(rover) {
       break;
   }
 }
+function reseteo() {
+  rover.x = 0;
+  rover.y = 0;
+  rover.travelLog = [];
+  console.log("** Te has salido del perímetro, vuelves al punto inicial **");
+}
 
 function moveForward(rover) {
   console.log("moveForward was called");
+  var inLimits = false;
   switch (rover.direction) {
     case "N":
-      rover.x--;
-      rover.y;
-      console.log("La posición del rover es [" + rover.y + "," + rover.x + "]");
-      rover.travelLog.push("[" + rover.y + "," + rover.x + "]");
+      if (rover.y > 0 && rover.y < 9) {
+        if (board[rover.y][rover.x] === null){
+          rover.y--;
+          inLimits = true;
+          console.log("La posición del rover es [" + rover.y + "," + rover.x + "]");
+        }else{
+          console.log("¡¡Hay un obstaculo en [" + rover.y + "," + rover.x + "]!!");
+        }
+      } else {
+        reseteo();
+      }
       break;
     case "S":
-      rover.x++;
-      rover.y;
-      console.log("La posición del rover es [" + rover.y + "," + rover.x + "]");
-      rover.travelLog.push("[" + rover.y + "," + rover.x + "]");
+      if (rover.y > 0 && rover.y < 9) {
+        if (board[rover.y][rover.x] === null) {
+          rover.y++;
+          inLimits = true;
+          console.log("La posición del rover es [" + rover.y + "," + rover.x + "]");
+        }else{
+          console.log("¡¡Hay un obstaculo en [" + rover.y + "," + rover.x + "]!!");
+        }
+      } else {
+        reseteo();
+      }
       break;
     case "W":
-      rover.y--;
-      rover.x;
-      console.log("La posición del rover es [" + rover.y + "," + rover.x + "]");
-      rover.travelLog.push("[" + rover.y + "," + rover.x + "]");
+      if (rover.x > 0 && rover.x < 9) {
+        if (board[rover.y][rover.x] === null){
+          rover.x--;
+          console.log("La posición del rover es [" + rover.y + "," + rover.x + "]");
+        }else{
+          console.log("¡¡Hay un obstaculo en [" + rover.y + "," + rover.x + "]!!");
+        }
+      }else {
+        reseteo();
+      }
       break;
     case "E":
-      rover.y++;
-      rover.x;
-      console.log("La posición del rover es [" + rover.y + "," + rover.x + "]");
-      rover.travelLog.push("[" + rover.y + "," + rover.x + "]");
+      if (rover.x >= 0 && rover.x < 9) {
+        if (board[rover.y][rover.x] === null){
+          rover.x++;
+          console.log("La posición del rover es [" + rover.y + "," + rover.x + "]");
+        }else{
+          console.log("¡¡Hay un obstaculo en [" + rover.y + "," + rover.x + "]!!");
+        }
+      }else {
+        reseteo();
+      }
       break;
+  }
+  if (inLimits) {
+    rover.travelLog.push("[" + rover.y + "," + rover.x + "]");
   }
 }
 
 function moveBackwards(rover) {
-  console.log("moveForward was called");
+  console.log("moveBackward was called");
+  var inLimits = false;
   switch (rover.direction) {
     case "N":
-      rover.x++;
-      rover.y;
-      console.log("La posición del rover es [" + rover.y + "," + rover.x + "]");
-      rover.travelLog.push("[" + rover.y + "," + rover.x + "]");
+      if (rover.y >= 0 && rover.y <= 9) {
+        rover.y++;
+        inLimits = true;
+        console.log(
+          "La posición del rover es [" + rover.y + "," + rover.x + "]"
+        );
+      } else {
+        reseteo();
+      }
       break;
     case "S":
-      rover.x--;
-      rover.y;
-      console.log("La posición del rover es [" + rover.y + "," + rover.x + "]");
-      rover.travelLog.push("[" + rover.y + "," + rover.x + "]");
+      if (rover.y >= 0 && rover.y <= 9) {
+        rover.y--;
+        inLimits = true;
+        console.log(
+          "La posición del rover es [" + rover.y + "," + rover.x + "]"
+        );
+      } else {
+        reseteo();
+      }
       break;
     case "W":
-      rover.y++;
-      rover.x;
-      console.log("La posición del rover es [" + rover.y + "," + rover.x + "]");
-      rover.travelLog.push("[" + rover.y + "," + rover.x + "]");
+      if (rover.x >= 0 && rover.x < 9) {
+        rover.x++;
+        console.log(
+          "La posición del rover es [" + rover.y + "," + rover.x + "]"
+        );
+      } else {
+        reseteo();
+      }
       break;
     case "E":
-      rover.y--;
-      rover.x;
-      console.log("La posición del rover es [" + rover.y + "," + rover.x + "]");
-      rover.travelLog.push("[" + rover.y + "," + rover.x + "]");
+      if (rover.x >= 0 && rover.x < 9) {
+        rover.x--;
+        inLimits = true;
+      } else {
+        reseteo();
+      }
       break;
   }
+  if (inLimits) {
+    rover.travelLog.push("[" + rover.y + "," + rover.x + "]");
+  }
 }
+
 
 function comandos(jugada) {
   for (var i = 0; i < jugada.length; i++) {
@@ -119,7 +198,6 @@ function comandos(jugada) {
       jugada[i] === "l" ||
       jugada[i] === "b"
     ) {
-      if (rover.x >= 0 && rover.x < 10 && rover.y >= 0 && rover.y < 10) {
         switch (jugada[i]) {
           case "f":
             moveForward(rover);
@@ -134,9 +212,6 @@ function comandos(jugada) {
             moveBackwards(rover);
             break;
         }
-      } else {
-        console.log("PELIGRO!! Te has salido de la zona controlada.");
-      }
     } else {
       console.log("El caracter introducido no es valido.");
     }
