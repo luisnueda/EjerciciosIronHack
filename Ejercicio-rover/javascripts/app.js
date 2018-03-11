@@ -11,23 +11,24 @@ var board = [
   [null, null, null, null, null, null, null, null, null, null],
   [null, null, "O", null, null, null, null, null, null, null],
   [null, null, null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, "O", null, null, null],
+  [null, null, "O", null, null, null, null, null, null, null],
   [null, null, null, null, null, null, null, null, null, null],
   [null, null, null, null, null, null, null, null, null, null],
   [null, null, null, null, null, null, null, null, null, null]
 ];
-
+console.log("---------------------------------");
 for(var i = 0; i < board.length; i++){
   var row = board[i];
   for(var j = 0; j < row.length; j++){
     var column = row[j];
     if(column === "O"){
       var obstaculo = [i,j];
-      console.log("***** " + obstaculo);
+      console.log("|  Hay un obstaculo en : [" + obstaculo + "]  |");
     }
   }
 }
+console.log("---------------------------------");
 // ======================
 function turnLeft(rover) {
   console.log("turnLeft was called!");
@@ -97,7 +98,7 @@ function moveForward(rover) {
       }
       break;
     case "S":
-      if (rover.y > 0 && rover.y < 9) {
+      if (rover.y >= 0 && rover.y < 9) {
         if (board[rover.y][rover.x] === null) {
           rover.y++;
           inLimits = true;
@@ -110,9 +111,10 @@ function moveForward(rover) {
       }
       break;
     case "W":
-      if (rover.x > 0 && rover.x < 9) {
+      if (rover.x >= 0 && rover.x < 9) {
         if (board[rover.y][rover.x] === null){
           rover.x--;
+          inLimits = true;
           console.log("La posición del rover es [" + rover.y + "," + rover.x + "]");
         }else{
           console.log("¡¡Hay un obstaculo en [" + rover.y + "," + rover.x + "]!!");
@@ -125,6 +127,7 @@ function moveForward(rover) {
       if (rover.x >= 0 && rover.x < 9) {
         if (board[rover.y][rover.x] === null){
           rover.x++;
+          inLimits = true;
           console.log("La posición del rover es [" + rover.y + "," + rover.x + "]");
         }else{
           console.log("¡¡Hay un obstaculo en [" + rover.y + "," + rover.x + "]!!");
@@ -144,29 +147,33 @@ function moveBackwards(rover) {
   var inLimits = false;
   switch (rover.direction) {
     case "N":
-      if (rover.y >= 0 && rover.y <= 9) {
-        rover.y++;
-        inLimits = true;
-        console.log(
-          "La posición del rover es [" + rover.y + "," + rover.x + "]"
-        );
+      if (rover.y >=0 && rover.y < 9) {
+        if (board[rover.y][rover.x] === null){
+          rover.y++;
+          inLimits = true;
+          console.log("La posición del rover es [" + rover.y + "," + rover.x + "]");
+        }else{
+          console.log("¡¡Hay un obstaculo en [" + rover.y + "," + rover.x + "]!!");
+        }
       } else {
         reseteo();
       }
       break;
     case "S":
-      if (rover.y >= 0 && rover.y <= 9) {
-        rover.y--;
-        inLimits = true;
-        console.log(
-          "La posición del rover es [" + rover.y + "," + rover.x + "]"
-        );
+      if (rover.y > 0 && rover.y <= 9) {
+        if (board[rover.y][rover.x] === null){
+          rover.y--;
+          inLimits = true;
+          console.log("La posición del rover es [" + rover.y + "," + rover.x + "]");
+        }else{
+          console.log("¡¡Hay un obstaculo en [" + rover.y + "," + rover.x + "]!!");
+        }
       } else {
         reseteo();
       }
       break;
     case "W":
-      if (rover.x >= 0 && rover.x < 9) {
+      if (rover.x > 0 && rover.x < 9) {
         rover.x++;
         console.log(
           "La posición del rover es [" + rover.y + "," + rover.x + "]"
@@ -176,7 +183,7 @@ function moveBackwards(rover) {
       }
       break;
     case "E":
-      if (rover.x >= 0 && rover.x < 9) {
+      if (rover.x > 0 && rover.x < 9) {
         rover.x--;
         inLimits = true;
       } else {
